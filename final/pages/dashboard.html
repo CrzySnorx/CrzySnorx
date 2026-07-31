@@ -1,0 +1,107 @@
+<h1>Dashboard</h1>
+
+<!-- Statistics Cards -->
+<div class="cards">
+  <div class="card">
+    <i class="fa-solid fa-cow"></i>
+    <h2 id="livestockCount">0</h2>
+    <p>Total Livestock</p>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-warehouse"></i>
+    <h2 id="occupancy">0%</h2>
+    <p>Yard Occupancy</p>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-truck"></i>
+    <h2 id="haulingCount">0</h2>
+    <p>Today's Hauling</p>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-money-bill-wave"></i>
+    <h2 id="earnings">$0</h2>
+    <p>Today's Earnings</p>
+  </div>
+</div>
+
+<!-- Chart + Schedule -->
+<div class="dashboard-grid">
+  <div class="chart-box">
+    <h3>Yard Occupancy</h3>
+    <canvas id="yardChart"></canvas>
+  </div>
+
+  <div class="schedule-box">
+    <h3>Hauling Schedule</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Truck</th>
+          <th>Destination</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Truck 01</td>
+          <td>Batangas</td>
+          <td>8:00 AM</td>
+        </tr>
+        <tr>
+          <td>Truck 02</td>
+          <td>Laguna</td>
+          <td>10:30 AM</td>
+        </tr>
+        <tr>
+          <td>Truck 03</td>
+          <td>Manila</td>
+          <td>1:00 PM</td>
+        </tr>
+        <tr>
+          <td>Truck 04</td>
+          <td>Cavite</td>
+          <td>4:00 PM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Recent Activities -->
+<div class="activities">
+  <h3>Recent Activities</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Activity</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>July 31</td>
+        <td>120 cattle arrived</td>
+        <td><span class="success">Completed</span></td>
+      </tr>
+      <tr>
+        <td>July 31</td>
+        <td>Truck departed</td>
+        <td><span class="pending">Ongoing</span></td>
+      </tr>
+      <tr>
+        <td>July 30</td>
+        <td>User added</td>
+        <td><span class="success">Completed</span></td>
+      </tr>
+      <tr>
+        <td>July 30</td>
+        <td>Inventory Updated</td>
+        <td><span class="success">Completed</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

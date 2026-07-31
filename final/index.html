@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livestock Yard Management System</title>
+  
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <i class="fa-solid fa-cow"></i>
+      <span>Livestock</span>
+    </div>
+
+    <ul>
+      <li class="active" onclick="loadPage('dashboard', this)">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </li>
+      <li onclick="loadPage('users', this)">
+        <i class="fa-solid fa-users"></i>
+        Users Management
+      </li>
+      <li onclick="loadPage('livestock', this)">
+        <i class="fa-solid fa-cow"></i>
+        Livestock
+      </li>
+      <li onclick="loadPage('hauling', this)">
+        <i class="fa-solid fa-truck"></i>
+        Hauling Schedule
+      </li>
+      <li onclick="loadPage('yard', this)">
+        <i class="fa-solid fa-warehouse"></i>
+        Yard Operations
+      </li>
+      <li onclick="loadPage('earnings', this)">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        Earnings
+      </li>
+      <li onclick="loadPage('reports', this)">
+        <i class="fa-solid fa-chart-column"></i>
+        Reports
+      </li>
+      <li onclick="loadPage('settings', this)">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main">
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <button id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class="fa-solid fa-search"></i>
+      </div>
+
+      <div class="right-nav">
+        <!-- Notification -->
+        <div class="notification">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge">3</span>
+          <div class="dropdown">
+            <p>New livestock arrived</p>
+            <p>Hauling updated</p>
+            <p>New user registered</p>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile">
+          <img src="images/admin.jpg" alt="Admin Profile">
+          <span>Admin</span>
+          <div class="dropdown">
+            <p>Profile</p>
+            <p>Settings</p>
+            <p>Logout</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area (Dito ilo-load ang dynamic pages) -->
+    <div class="content" id="mainContent">
+      <!-- Kusang lalabas dito ang nilalaman ng bawat section -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Global & Utilities -->
+  <script src="js/main.js"></script>
+  
+  <!-- Page Specific Modules -->
+  <script src="js/dashboard.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/livestock.js"></script>
+  <script src="js/hauling.js"></script>
+  <script src="js/yard.js"></script>
+  <script src="js/earnings.js"></script>
+  <script src="js/reports.js"></script>
+  
+  <!-- Router & Navigation (Huling ilagay) -->
+  <script src="js/navigation.js"></script>
+</body>
+</html>
