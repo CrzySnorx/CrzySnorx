@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIYAHE - Livestock Yard & Hauling Management System</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo logo-stacked">
+      <img src="images/logo2.jpg" alt="BIYAHE Logo" class="brand-logo">
+      <span class="logo-text">BIYAHE</span>
+    </div>
+
+    <div class="sidebar-menu">
+      <!-- MAIN SECTION -->
+      <div class="menu-header">MAIN</div>
+      <ul>
+        <li class="active" onclick="loadPage('dashboard', this)">
+          <i class="fa-solid fa-chart-line"></i>
+          <span class="link-name">Dashboard</span>
+        </li>
+      </ul>
+
+      <!-- OPERATIONS SECTION -->
+      <div class="menu-header">OPERATIONS</div>
+      <ul>
+        <li onclick="loadPage('livestock', this)">
+          <i class="fa-solid fa-cow"></i>
+          <span class="link-name">Livestock</span>
+        </li>
+        <li onclick="loadPage('hauling', this)">
+          <i class="fa-solid fa-truck"></i>
+          <span class="link-name">Hauling Schedule</span>
+        </li>
+        <li onclick="loadPage('yard', this)">
+          <i class="fa-solid fa-warehouse"></i>
+          <span class="link-name">Yard Operations</span>
+        </li>
+        <li onclick="loadPage('fleet', this)">
+          <i class="fa-solid fa-truck-front"></i>
+          <span class="link-name">Fleet Management</span>
+        </li>
+      </ul>
+
+      <!-- FINANCE & PEOPLE SECTION -->
+      <div class="menu-header">FINANCE & PEOPLE</div>
+      <ul>
+        <li onclick="loadPage('earnings', this)">
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <span class="link-name">Earnings</span>
+        </li>
+        <li onclick="loadPage('clients', this)">
+          <i class="fa-solid fa-address-book"></i>
+          <span class="link-name">Clients</span>
+        </li>
+        <li onclick="loadPage('users', this)">
+          <i class="fa-solid fa-users"></i>
+          <span class="link-name">Users Management</span>
+        </li>
+      </ul>
+
+      <!-- SYSTEM SECTION -->
+      <div class="menu-header">SYSTEM</div>
+      <ul>
+        <li onclick="loadPage('reports', this)">
+          <i class="fa-solid fa-chart-column"></i>
+          <span class="link-name">Reports</span>
+        </li>
+        <li onclick="loadPage('settings', this)">
+          <i class="fa-solid fa-gear"></i>
+          <span class="link-name">Settings</span>
+        </li>
+        <li onclick="loadPage('help', this)">
+          <i class="fa-solid fa-circle-question"></i>
+          <span class="link-name">Help & Support</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Sidebar Footer Utilities -->
+    <div class="sidebar-footer">
+      <div class="footer-action" id="toggleCollapseBtn">
+        <i class="fa-solid fa-angles-left"></i>
+        <span class="link-name">Collapse Sidebar</span>
+      </div>
+      <div class="footer-action logout-action" onclick="handleLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span class="link-name">Logout</span>
+      </div>
+      <div class="version-tag">
+        <span>BIYAHE v1.0.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main">
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <button id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search transactions, livestock, trucks...">
+        <i class="fa-solid fa-search"></i>
+      </div>
+
+      <!-- Right Navigation Snippet -->
+      <div class="right-nav">
+        <!-- Notification -->
+        <div class="notification" id="notification-bell">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge">3</span>
+          <div class="dropdown" id="notification-menu">
+            <p><i class="fa-solid fa-cow"></i> New livestock arrived</p>
+            <p><i class="fa-solid fa-truck"></i> Hauling schedule updated</p>
+            <p><i class="fa-solid fa-user-plus"></i> New user registered</p>
+          </div>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="profile" id="admin-profile">
+          <img src="images/admin.jpg" alt="Admin Profile">
+          <span>Aethan Dave Manzano</span>
+          <div class="dropdown" id="admin-menu">
+            <p onclick="loadPage('profile')"><i class="fa-solid fa-user"></i> Profile</p>
+            <p onclick="loadPage('settings')"><i class="fa-solid fa-gear"></i> Settings</p>
+            <hr>
+            <p onclick="handleLogout()" class="text-danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area (Dynamic Page Injection) -->
+    <div class="content" id="mainContent">
+      <!-- Dynamic page content injects here -->
+    </div>
+  </div>
+
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Global & Utilities -->
+  <script src="js/main.js"></script>
+  
+  <!-- Page Specific Modules -->
+  <script src="js/dashboard.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/livestock.js"></script>
+  <script src="js/hauling.js"></script>
+  <script src="js/yard.js"></script>
+  <script src="js/fleet.js"></script>
+  <script src="js/earnings.js"></script>
+  <script src="js/clients.js"></script>
+  <script src="js/reports.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/help.js"></script>
+  
+  <!-- Router & Navigation -->
+  <script src="js/navigation.js"></script>
+</body>
+</html>

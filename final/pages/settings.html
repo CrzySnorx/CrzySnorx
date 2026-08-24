@@ -1,0 +1,64 @@
+<section class="settings-section">
+  <div class="section-header">
+    <h2>System Settings</h2>
+  </div>
+
+  <div class="settings-grid">
+    <!-- Comprehensive Profile Card -->
+    <div class="profile-card" style="text-align: center; padding: 20px;">
+      <img src="images/admin.jpg" alt="Administrator Profile" id="settingsProfileImg" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;">
+      
+      <h3 id="settingsProfileName" style="margin-bottom: 2px;">Aethan Dave Manzano</h3>
+      <p id="settingsProfilePosition" style="color: #2563eb; font-weight: 600; font-size: 0.9rem; margin-bottom: 12px;">Yard Operations Manager</p>
+
+      <!-- Details List -->
+      <div class="profile-details-list" style="text-align: left; background: #f8fafc; padding: 12px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 15px; color: #475569;">
+        <p style="margin-bottom: 6px;"><strong>ID:</strong> <span id="settingsProfileId">ADM-2026-001</span></p>
+        <p style="margin-bottom: 6px;"><strong>Email:</strong> <span id="settingsProfileEmail">admin@livestock.com</span></p>
+        <p style="margin-bottom: 6px;"><strong>Phone:</strong> <span id="settingsProfilePhone">+63 912 345 6789</span></p>
+        <p style="margin-bottom: 6px;"><strong>Department:</strong> <span id="settingsProfileDept">Operations &amp; Management</span></p>
+        <p style="margin-bottom: 0;"><strong>Office:</strong> <span id="settingsProfileAddress">Lipa City Livestock Yard Facility, Batangas</span></p>
+      </div>
+
+      <button class="primary-btn" onclick="loadPage('profile')" style="width: 100%;">
+        <i class="fa-solid fa-pen-to-square"></i> Edit Profile
+      </button>
+    </div>
+
+    <!-- Dashboard Options -->
+    <div class="setting-card">
+      <h3>Dashboard Options</h3>
+      <br>
+      <button id="darkModeBtn" class="primary-btn">
+        🌙 Toggle Dark Mode
+      </button>
+      <br><br>
+      <button id="exportCSV" class="primary-btn">
+        Export CSV
+      </button>
+      <br><br>
+      <button id="exportExcel" class="primary-btn">
+        Export Excel
+      </button>
+      <br><br>
+      <button id="exportPDF" class="primary-btn">
+        Export PDF
+      </button>
+    </div>
+
+    <!-- Date, Time & Session -->
+    <div class="setting-card">
+      <h3>Current Date &amp; Time</h3>
+      <br>
+      <h1 id="clock"></h1>
+      <h3 id="today"></h3>
+
+      <hr class="divider" style="margin: 20px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+      <!-- Log Out Button -->
+      <button id="logoutBtn" class="btn-danger" style="width: 100%;">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+      </button>
+    </div>
+  </div>
+</section>

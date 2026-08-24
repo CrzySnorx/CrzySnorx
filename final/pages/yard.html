@@ -1,0 +1,41 @@
+<section class="yard-section">
+  <div class="section-header">
+    <h2>Yard Operations</h2>
+    <div class="header-actions">
+      <button class="secondary-btn" id="exportYardBtn">
+        <i class="fa-solid fa-file-export"></i> Export
+      </button>
+      <button class="primary-btn" id="addYardBtn">
+        <i class="fa-solid fa-plus"></i> Add Yard
+      </button>
+    </div>
+  </div>
+
+  <div class="summary-cards">
+    <div class="card"><span>Total Yards</span><h3 id="totalYardsCount">0</h3></div>
+    <div class="card"><span>Total Capacity</span><h3 id="totalCapacityCount">0</h3></div>
+    <div class="card"><span>Total Occupied</span><h3 id="totalOccupiedCount">0</h3></div>
+    <div class="card"><span>Near Full / Critical</span><h3 id="criticalYardsCount">0</h3></div>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="searchYard" placeholder="Search yard name...">
+    <select id="filterYardStatus">
+      <option value="">All Statuses</option>
+      <option value="Available">Available</option>
+      <option value="Full">Full</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table id="yardTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>Yard Name</th><th>Capacity</th><th>Occupied</th>
+          <th>Occupancy Rate</th><th>Status</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</section>

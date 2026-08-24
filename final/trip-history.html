@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <title>Trip History - BIYAHE</title>
+  <link rel="stylesheet" href="driver-css/driver.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-truck"></i></div>
+        <div class="brand-text">
+          <h2>BIYAHE</h2>
+          <p>Livestock & Hauling</p>
+        </div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="dashboard.html" class="nav-link"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+        <li><a href="active-route.html" class="nav-link"><i class="fa-solid fa-route"></i> Active Route / GPS</a></li>
+        <li><a href="yard-queue.html" class="nav-link"><i class="fa-solid fa-truck-loading"></i> Yard Queue</a></li>
+        <li><a href="waybills.html" class="nav-link"><i class="fa-solid fa-file-invoice"></i> Waybills & Permits</a></li>
+        <li><a href="trip-history.html" class="nav-link active"><i class="fa-solid fa-clock-rotate-left"></i> Trip History</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="page-header">
+        <h1>Trip History</h1>
+        <p>Talaan ng mga nakaraang biyahe at nakumpletong deliver.</p>
+      </div>
+
+      <div class="card">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Petsa</th>
+              <th>Truck / Driver</th>
+              <th>Pinanggalingan & Rutang Tinahak</th>
+              <th>Distansya</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Aug 05, 2026</td>
+              <td>TRK-101 (Pedro Penduko)</td>
+              <td>Batangas &rarr; Bulacan</td>
+              <td>120 km</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Aug 03, 2026</td>
+              <td>TRK-104 (Juan Dela Cruz)</td>
+              <td>Pampanga &rarr; Manila</td>
+              <td>85 km</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

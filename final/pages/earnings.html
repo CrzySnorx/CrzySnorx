@@ -1,0 +1,132 @@
+<section class="earnings-section">
+  <!-- Section Header -->
+  <div class="section-header">
+    <h2>Earnings Management</h2>
+    <div class="header-actions">
+      <button class="secondary-btn" id="exportEarningsBtn">
+        <i class="fa-solid fa-file-export"></i> Export Report
+      </button>
+      <button id="addEarningBtn" class="primary-btn">
+        <i class="fa-solid fa-plus"></i> Add Transaction
+      </button>
+    </div>
+  </div>
+
+  <!-- Summary Cards / Financial KPIs -->
+  <div class="summary-cards">
+    <div class="card highlight-card">
+      <div class="card-info">
+        <span>Total Earnings</span>
+        <h3 id="totalEarnings">₱0.00</h3>
+      </div>
+      <i class="fa-solid fa-wallet card-icon"></i>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <span>Hauling Fees</span>
+        <h3 id="haulingEarnings">₱0.00</h3>
+      </div>
+      <i class="fa-solid fa-truck card-icon info"></i>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <span>Yard / Storage Fees</span>
+        <h3 id="yardEarnings">₱0.00</h3>
+      </div>
+      <i class="fa-solid fa-warehouse card-icon healthy"></i>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <span>Pending Receivables</span>
+        <h3 id="pendingEarnings">₱0.00</h3>
+      </div>
+      <i class="fa-solid fa-clock-rotate-left card-icon warning"></i>
+    </div>
+  </div>
+
+  <!-- Search, Filters & Date Range Toolbar -->
+  <div class="toolbar">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchEarnings" class="search-user" placeholder="Search ref no, client, description...">
+    </div>
+    
+    <div class="filters">
+      <input type="date" id="filterStartDate" class="filter-input" title="Start Date">
+      <input type="date" id="filterEndDate" class="filter-input" title="End Date">
+
+      <select id="filterCategory" class="filter-select">
+        <option value="">All Categories</option>
+        <option value="Hauling Fee">Hauling Fee</option>
+        <option value="Yard Fee">Yard Fee</option>
+        <option value="Livestock Sale">Livestock Sale</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <select id="filterPaymentStatus" class="filter-select">
+        <option value="">All Statuses</option>
+        <option value="Paid">Paid</option>
+        <option value="Pending">Pending</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Data Table Container -->
+  <div class="table-container">
+    <table id="earningsTable">
+      <thead>
+        <tr>
+          <th>Ref No.</th>
+          <th>Date</th>
+          <th>Client / Customer</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Method</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamic rows inserted via JavaScript -->
+        <!-- Sample Row Representation: -->
+        <!-- 
+        <tr>
+          <td><strong>INV-2026-001</strong></td>
+          <td>2026-08-01</td>
+          <td>Juan Dela Cruz</td>
+          <td>Sold 5 Cattle</td>
+          <td>Livestock Sale</td>
+          <td>Cash</td>
+          <td class="amount-cell">₱250,000.00</td>
+          <td><span class="badge badge-success">Paid</span></td>
+          <td class="actions-cell">
+            <button class="btn-icon view-btn" title="View Receipt"><i class="fa-solid fa-receipt"></i></button>
+            <button class="btn-icon edit-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn-icon delete-btn" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="pagination-container">
+    <div class="entries-per-page">
+      <label for="earningsEntriesSelect">Show</label>
+      <select id="earningsEntriesSelect">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+      </select>
+      <span>entries</span>
+    </div>
+    <div class="pagination-buttons">
+      <button id="prevEarningsPageBtn" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+      <span id="earningsPageInfo">Page 1 of 1</span>
+      <button id="nextEarningsPageBtn"><i class="fa-solid fa-chevron-right"></i> Next</button>
+    </div>
+  </div>
+</section>

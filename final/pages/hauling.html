@@ -1,0 +1,193 @@
+<section class="hauling-section">
+  <!-- Section Header -->
+  <div class="section-header">
+    <h2>Hauling Schedule</h2>
+    <div class="header-actions">
+      <div class="view-toggle">
+        <button class="toggle-btn active" id="tableViewBtn" title="Table View">
+          <i class="fa-solid fa-list"></i>
+        </button>
+        <button class="toggle-btn" id="calendarViewBtn" title="Calendar View">
+          <i class="fa-solid fa-calendar-days"></i>
+        </button>
+      </div>
+      <button class="secondary-btn" id="exportHaulingBtn">
+        <i class="fa-solid fa-file-export"></i> Export
+      </button>
+      <button id="addHaulingBtn" class="primary-btn">
+        <i class="fa-solid fa-plus"></i> Add Schedule
+      </button>
+    </div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="summary-cards">
+    <div class="card"><span>Total Deliveries</span><h3 id="totalDeliveries">0</h3></div>
+    <div class="card"><span>In-Transit</span><h3 id="inTransitCount">0</h3></div>
+    <div class="card"><span>Scheduled Today</span><h3 id="scheduledTodayCount">0</h3></div>
+    <div class="card"><span>Completed Today</span><h3 id="completedTodayCount">0</h3></div>
+  </div>
+
+  <!-- Filters -->
+  <div class="toolbar">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchHauling" placeholder="Search truck, driver, destination...">
+    </div>
+    <div class="filters">
+      <input type="date" id="filterDate">
+      <select id="filterStatus">
+        <option value="">All Statuses</option>
+        <option value="Scheduled">Scheduled</option>
+        <option value="In-Transit">In-Transit</option>
+        <option value="Completed">Completed</option>
+        <option value="Cancelled">Cancelled</option>
+      </select>
+      <select id="filterTruck">
+        <option value="">All Trucks</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-container" id="haulingTableView">
+    <table id="haulingTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Truck Info</th>
+          <th>Driver</th>
+          <th>Cargo / Head Count</th>
+          <th>Origin (Yard)</th>
+          <th>Destination / Client</th>
+          <th>Date & Time</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Modal for Adding Hauling -->
+  <div class="modal" id="haulingModal" style="display:none;">
+    <div class="modal-content landscape-modal">
+      <!-- Sticky header -->
+      <div class="modal-header">
+        <h3>Add Hauling Schedule</h3>
+      </div>
+
+      <form id="haulingForm">
+        <input type="hidden" id="haulId">
+
+        <!-- Scrollable grid -->
+        <div class="modal-grid">
+          <!-- Left Column -->
+          <div class="modal-column">
+            <h4>Hauling Information</h4>
+            <div class="form-group">
+              <label for="truck">Truck Info</label>
+              <input type="text" id="truck" placeholder="Truck name or plate number" required>
+            </div>
+            <div class="form-group">
+              <label for="driver">Driver Name</label>
+              <input type="text" id="driver" placeholder="Driver full name" required>
+            </div>
+            <div class="form-group">
+              <label for="destination">Destination / Client</label>
+              <input type="text" id="destination" placeholder="Destination or client name" required>
+            </div>
+            <div class="form-group">
+              <label for="haulDate">Date</label>
+              <input type="date" id="haulDate" required>
+            </div>
+            <div class="form-group">
+              <label for="haulTime">Time</label>
+              <input type="time" id="haulTime" required>
+            </div>
+            <div class="form-group">
+              <label for="haulStatus">Status</label>
+              <select id="haulStatus">
+                <option value="Scheduled">Scheduled</option>
+                <option value="In-Transit">In-Transit</option>
+                <option value="Completed">Completed</option>
+                <option value="Cancelled">Cancelled</option>
+              </select>
+            </div>
+
+            <h4>Yard Information</h4>
+            <div class="form-group">
+              <label for="yardName">Origin Yard</label>
+              <input type="text" id="yardName" placeholder="Yard name or code">
+            </div>
+            <div class="form-group">
+              <label for="yardCapacity">Yard Capacity</label>
+              <input type="number" id="yardCapacity" placeholder="Total capacity">
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="modal-column">
+            <h4>Fleet Information</h4>
+            <div class="form-group">
+              <label for="plateNo">Truck Plate No.</label>
+              <input type="text" id="plateNo" placeholder="Plate number">
+            </div>
+            <div class="form-group">
+              <label for="truckType">Truck Type</label>
+              <input type="text" id="truckType" placeholder="Type of truck">
+            </div>
+
+            <h4>Earnings Information</h4>
+            <div class="form-group">
+              <label for="earningDescription">Description</label>
+              <input type="text" id="earningDescription" placeholder="Earning description">
+            </div>
+            <div class="form-group">
+              <label for="earningAmount">Amount (₱)</label>
+              <input type="number" id="earningAmount" placeholder="Enter amount">
+            </div>
+
+            <h4>Client Information</h4>
+            <div class="form-group">
+              <label for="clientName">Client Name</label>
+              <input type="text" id="clientName" placeholder="Client or company name">
+            </div>
+            <div class="form-group">
+              <label for="clientContact">Contact Number</label>
+              <input type="text" id="clientContact" placeholder="Contact number">
+            </div>
+            <div class="form-group">
+              <label for="clientAddress">Address</label>
+              <input type="text" id="clientAddress" placeholder="Client address">
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Actions -->
+        <div class="modal-actions">
+          <button type="button" id="closeHauling" class="secondary-btn">Cancel</button>
+          <button type="submit" id="saveHauling" class="primary-btn">Save Schedule</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination-container">
+    <div class="entries-per-page">
+      <label for="haulingEntriesSelect">Show</label>
+      <select id="haulingEntriesSelect">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+      </select>
+      <span>entries</span>
+    </div>
+    <div class="pagination-buttons">
+      <button id="prevHaulingPageBtn" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+      <span id="haulingPageInfo">Page 1 of 1</span>
+      <button id="nextHaulingPageBtn"><i class="fa-solid fa-chevron-right"></i> Next</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BIYAHE - Driver Dashboard & Navigation</title>
+  
+  <!-- Font Awesome Icons & Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <!-- Updated Custom Stylesheet -->
+  <link rel="stylesheet" href="driver-css/driver.css" />
+</head>
+<body>
+
+  <div class="flex h-screen w-full overflow-hidden">
+
+    <!-- ==================== 1. SIDE NAVIGATION BAR ==================== -->
+    <aside class="sidebar hidden md:flex">
+      <div>
+        <!-- Brand Header -->
+        <div class="brand">
+          <div class="brand-logo">
+            <i class="fa-solid fa-truck"></i>
+          </div>
+          <div>
+            <h1 class="brand-name">BIYAHE</h1>
+            <p class="brand-sub font-xs">Livestock & Hauling</p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-menu">
+          <a href="driver.html" class="nav-link active">
+            <i class="fa-solid fa-gauge-high"></i> Dashboard
+          </a>
+          <a href="active-route.html" class="nav-link">
+            <i class="fa-solid fa-route"></i> Active Route / GPS
+          </a>
+          <a href="yard-queue.html" class="nav-link">
+            <i class="fa-solid fa-truck-loading"></i> Yard Queue
+          </a>
+          <a href="waybills.html" class="nav-link">
+            <i class="fa-solid fa-file-invoice"></i> Waybills & Permits
+          </a>
+          <a href="trip-history.html" class="nav-link">
+            <i class="fa-solid fa-clock-rotate-left"></i> Trip History
+          </a>
+        </nav>
+      </div>
+
+      <!-- Driver Profile / Logout -->
+      <div class="pt-4 border-t border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="avatar">
+            JD
+          </div>
+          <div class="overflow-hidden">
+            <p class="user-name truncate">Juan Dela Cruz</p>
+            <p class="font-xs text-sub">Lic: D02-19-88392</p>
+          </div>
+        </div>
+        <button class="btn btn-outline w-full justify-center text-rose-400 border-slate-700 hover:bg-slate-800 hover:text-rose-300">
+          <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <div class="flex-1 flex flex-col h-full overflow-y-auto">
+      
+      <!-- Top Header / Status Bar -->
+      <header class="app-header">
+        <div class="header-content container">
+          <div class="flex items-center gap-4">
+            <button class="md:hidden text-white text-xl">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h2 class="text-xl font-bold">Driver Console</h2>
+          </div>
+
+          <div class="user-actions">
+            <!-- Duty Status Badge -->
+            <div class="status-badge">
+              <span class="pulse-dot"></span>
+              ON DUTY
+            </div>
+            
+            <!-- Notifications -->
+            <button class="notification-btn">
+              <i class="fa-regular fa-bell"></i>
+              <span class="badge">3</span>
+            </button>
+
+            <!-- Small Profile Header View -->
+            <div class="user-profile hidden sm:flex">
+              <div class="avatar">JD</div>
+              <span class="user-name">Juan D.</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Content -->
+      <main class="main-content container">
+
+        <!-- Welcome Banner -->
+        <div class="welcome-bar">
+          <div>
+            <h2>Maligayang Pagbabalik, Juan! 👋</h2>
+            <p class="text-sub font-sm">Narito ang status ng iyong mga biyahe ngayong araw.</p>
+          </div>
+          <div class="date-card">
+            <i class="fa-regular fa-calendar-days text-blue-600 mr-2"></i>August 07, 2026
+          </div>
+        </div>
+
+        <!-- 1. ACTIVE DISPATCH CARD (HERO SECTION) -->
+        <div class="card">
+          <div class="card-header">
+            <div class="trip-id-wrap">
+              <span class="tag-primary">Trip #BYH-2026-0842</span>
+              <span class="status-pill status-in-transit"><i class="fa-solid fa-spinner fa-spin mr-1"></i> In Transit</span>
+            </div>
+            <div class="text-right">
+              <span class="detail-label block text-gray-400">Estimated Arrival</span>
+              <span class="text-xl font-bold text-amber-400">10:45 AM <small class="font-normal text-xs text-gray-300">(42 mins left)</small></span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="details-grid">
+              <!-- Pickup Info -->
+              <div class="point">
+                <div class="point-icon origin">
+                  <i class="fa-solid fa-circle-dot"></i>
+                </div>
+                <div>
+                  <p class="detail-label">Origin / Pickup</p>
+                  <p class="detail-value">Lipang Integrated Farm</p>
+                  <p class="font-xs text-sub">Zone 4, Lipa City, Batangas</p>
+                </div>
+              </div>
+
+              <!-- Destination Info -->
+              <div class="point">
+                <div class="point-icon destination">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <p class="detail-label">Destination Yard</p>
+                  <p class="detail-value">Batangas Central Yard</p>
+                  <p class="font-xs text-sub">Bay 3 - Unloading Dock</p>
+                </div>
+              </div>
+
+              <!-- Cargo Spec -->
+              <div class="point">
+                <div class="point-icon origin" style="background-color: #fef3c7; color: #d97706;">
+                  <i class="fa-solid fa-cow"></i>
+                </div>
+                <div>
+                  <p class="detail-label">Cargo Payload</p>
+                  <p class="detail-value">45 Swine (Live Hogs)</p>
+                  <p class="font-xs text-sub">Total Weight: ~4,950 kg</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-bar">
+              <a href="active-route.html" class="btn btn-primary">
+                <i class="fa-solid fa-diamond-turn-right"></i> Start Navigation
+              </a>
+              <a href="waybills.html" class="btn btn-outline">
+                <i class="fa-solid fa-file-lines"></i> View Waybill / Permit
+              </a>
+              <button class="btn btn-outline btn-right text-rose-600 border-rose-200 hover:bg-rose-50">
+                <i class="fa-solid fa-triangle-exclamation"></i> Report Issue
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. NAVIGATION & METRICS GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <!-- Left Column: Embedded GPS Navigation View -->
+          <div class="lg:col-span-2 card flex flex-col justify-between" style="min-height: 420px;">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+              <h3 class="font-bold text-gray-800 flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot text-blue-600"></i> Live Route Navigation
+              </h3>
+              <span class="badge badge-success">GPS Signal: Strong</span>
+            </div>
+
+            <!-- Simulated Map Visual -->
+            <div class="map-placeholder relative overflow-hidden flex-1 m-0">
+              <!-- Route Tracker Graphic -->
+              <div class="route-tracker w-full mx-4 z-10 bg-white/90 backdrop-blur shadow-sm">
+                <div class="point">
+                  <div class="point-icon origin"><i class="fa-solid fa-truck"></i></div>
+                  <div>
+                    <p class="point-name">En Route to Destination</p>
+                    <p class="font-xs text-sub">Southern Tagalog Arterial Rd</p>
+                  </div>
+                </div>
+                <div class="route-line hidden sm:flex">
+                  <div class="route-truck"><i class="fa-solid fa-angles-right"></i></div>
+                </div>
+                <span class="badge badge-info">65 km/h</span>
+              </div>
+
+              <!-- Map Navigation Overlay Guidance -->
+              <div class="absolute bottom-4 left-4 right-4 bg-slate-900 text-white p-3 rounded-lg text-left shadow-lg">
+                <p class="text-blue-400 font-bold font-xs uppercase tracking-wider">Next Turn</p>
+                <p class="font-sm font-semibold flex items-center gap-2 mt-1">
+                  <i class="fa-solid fa-arrow-turn-up-right text-amber-400 text-lg"></i> In 400m turn right onto STAR Tollway Exit
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Quick Stats & Yard Status -->
+          <div class="space-y-6">
+            
+            <!-- Daily Driver Metrics -->
+            <div class="card">
+              <h3 class="font-bold text-gray-800 mb-4">Today's Summary</h3>
+              
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div>
+                    <p class="stat-label">Completed</p>
+                    <p class="stat-value">3</p>
+                  </div>
+                  <div class="stat-icon icon-blue"><i class="fa-solid fa-circle-check"></i></div>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <p class="stat-label">Pending</p>
+                    <p class="stat-value">1</p>
+                  </div>
+                  <div class="stat-icon icon-amber"><i class="fa-solid fa-clock"></i></div>
+                </div>
+
+                <div class="stat-card">
+                  <div>
+                    <p class="stat-label">Livestock</p>
+                    <p class="stat-value">135</p>
+                  </div>
+                  <div class="stat-icon icon-green"><i class="fa-solid fa-cow"></i></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Yard Arrival & Queue Check-in -->
+            <div class="card">
+              <h3 class="font-bold text-slate-800">Yard Gate Queue</h3>
+              <p class="font-xs text-sub mb-4">Batangas Central Livestock Yard</p>
+              
+              <div class="route-tracker mb-4">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-warehouse text-slate-600 text-2xl"></i>
+                  <div>
+                    <p class="font-sm font-semibold text-slate-800">Queue Position</p>
+                    <p class="font-xs text-sub">2 trucks ahead of you</p>
+                  </div>
+                </div>
+                <span class="text-2xl font-bold text-blue-600">#03</span>
+              </div>
+
+              <a href="yard-queue.html" class="btn btn-primary w-full justify-center">
+                <i class="fa-solid fa-qrcode"></i> Scan Yard Entrance QR
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<section class="reports-section">
+  <!-- Section Header -->
+  <div class="section-header">
+    <h2>Reports & Analytics</h2>
+    <div class="header-actions">
+      <div class="date-filter">
+        <i class="fa-solid fa-calendar-days"></i>
+        <select id="reportDateRange" class="filter-select">
+          <option value="today">Today</option>
+          <option value="this_week">This Week</option>
+          <option value="this_month" selected>This Month</option>
+          <option value="this_year">This Year</option>
+          <option value="custom">Custom Range</option>
+        </select>
+      </div>
+      <button class="secondary-btn" id="exportPdfBtn">
+        <i class="fa-solid fa-file-pdf"></i> Export PDF
+      </button>
+      <button class="secondary-btn" id="exportExcelBtn">
+        <i class="fa-solid fa-file-excel"></i> Export Excel
+      </button>
+    </div>
+  </div>
+
+  <!-- Summary Cards / KPIs with Icons & Trends -->
+  <div class="report-cards">
+    <div class="report-card">
+      <div class="card-info">
+        <h3>Total Users</h3>
+        <h1 id="reportUsers">0</h1>
+        <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +5% this month</span>
+      </div>
+      <i class="fa-solid fa-users card-icon"></i>
+    </div>
+
+    <div class="report-card">
+      <div class="card-info">
+        <h3>Total Livestock</h3>
+        <h1 id="reportLivestock">0</h1>
+        <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +12% this month</span>
+      </div>
+      <i class="fa-solid fa-cow card-icon healthy"></i>
+    </div>
+
+    <div class="report-card">
+      <div class="card-info">
+        <h3>Total Hauling</h3>
+        <h1 id="reportHauling">0</h1>
+        <span class="trend neutral"><i class="fa-solid fa-minus"></i> 0% change</span>
+      </div>
+      <i class="fa-solid fa-truck card-icon info"></i>
+    </div>
+
+    <div class="report-card">
+      <div class="card-info">
+        <h3>Total Yards</h3>
+        <h1 id="reportYards">0</h1>
+        <span class="trend positive"><i class="fa-solid fa-check"></i> All operational</span>
+      </div>
+      <i class="fa-solid fa-warehouse card-icon warning"></i>
+    </div>
+  </div>
+
+  <!-- Chart Grid 1: Revenue & Livestock Distribution -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3>Monthly Earnings (₱)</h3>
+        <span class="badge badge-info">Financial Trend</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="earningsChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3>Livestock Health & Status</h3>
+        <span class="badge badge-success">Health Overview</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="livestockChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart Grid 2: Logistics & Facility Capacity -->
+  <div class="chart-grid">
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3>Hauling Performance</h3>
+        <span class="badge badge-warning">Logistics</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="haulingChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <h3>Yard Occupancy Rates</h3>
+        <span class="badge badge-info">Capacity</span>
+      </div>
+      <div class="chart-container">
+        <canvas id="yardReportChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+<section class="clients-section">
+  <!-- Section Header -->
+  <div class="section-header">
+    <h2>Clients & Owners Management</h2>
+    <div class="header-actions">
+      <button class="secondary-btn" id="exportClientsBtn">
+        <i class="fa-solid fa-file-export"></i> Export List
+      </button>
+      <button id="addClientBtn" class="primary-btn">
+        <i class="fa-solid fa-user-plus"></i> Add New Client
+      </button>
+    </div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="summary-cards">
+    <div class="card">
+      <div class="card-info">
+        <span>Total Clients</span>
+        <h3 id="totalClients">0</h3>
+      </div>
+      <i class="fa-solid fa-address-book card-icon"></i>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <span>Active Shippers</span>
+        <h3 id="activeClients">0</h3>
+      </div>
+      <i class="fa-solid fa-user-check card-icon healthy"></i>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <span>Pending Invoices</span>
+        <h3 id="clientPendingPayments">₱0.00</h3>
+      </div>
+      <i class="fa-solid fa-file-invoice-dollar card-icon warning"></i>
+    </div>
+  </div>
+
+  <!-- Toolbar & Table -->
+  <div class="toolbar">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchClients" class="search-user" placeholder="Search client name, phone, company...">
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table id="clientsTable">
+      <thead>
+        <tr>
+          <th>Client ID</th>
+          <th>Name / Company</th>
+          <th>Contact Number</th>
+          <th>Address</th>
+          <th>Total Transactions</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamic Client Rows -->
+      </tbody>
+    </table>
+  </div>
+</section>

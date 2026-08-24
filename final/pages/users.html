@@ -1,0 +1,108 @@
+<div class="users-section">
+  <!-- 1. Header Section -->
+  <div class="section-header">
+    <h2>Users Management</h2>
+    <div class="header-actions">
+      <button id="exportUsersBtn" class="secondary-btn">
+        <i class="fa-solid fa-file-export"></i> Export
+      </button>
+      <button id="addUserBtn" class="primary-btn">
+        <i class="fa-solid fa-plus"></i> Add User
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. Quick Summary Cards (Metrics) -->
+  <div class="user-stats-cards">
+    <div class="stat-card">
+      <span class="stat-title">Total Users</span>
+      <span class="stat-value" id="totalUsersCount">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-title">Active</span>
+      <span class="stat-value text-success" id="activeUsersCount">0</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-title">Inactive</span>
+      <span class="stat-value text-muted" id="inactiveUsersCount">0</span>
+    </div>
+  </div>
+
+  <!-- 3. Controls Bar (Search & Filters) -->
+  <div class="table-controls">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="searchUser" placeholder="Search by name, email, or phone..." class="search-user">
+    </div>
+
+    <div class="filter-box">
+      <select id="roleFilter" class="filter-dropdown">
+        <option value="">All Roles</option>
+        <option value="Administrator">Administrator</option>
+        <option value="Staff">Staff</option>
+        <option value="Driver">Driver</option>
+        <option value="Yard Operator">Yard Operator</option>
+      </select>
+
+      <select id="statusFilter" class="filter-dropdown">
+        <option value="">All Status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 4. Data Table -->
+  <div class="table-responsive">
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="selectAllUsers"></th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact No.</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Last Login</th>
+          <th class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamic rows will be rendered here -->
+        <!-- Example Row Structure for reference: -->
+        <!-- 
+        <tr>
+          <td><input type="checkbox" class="user-select"></td>
+          <td>1</td>
+          <td>Admin User</td>
+          <td>admin@email.com</td>
+          <td>+63 912 345 6789</td>
+          <td>Administrator</td>
+          <td><span class="badge badge-success">Active</span></td>
+          <td>2026-08-01 14:30</td>
+          <td class="action-buttons">
+            <button class="btn-icon view-btn" title="View"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn-icon edit-btn" title="Edit"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button class="btn-icon delete-btn" title="Delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr> 
+        -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. Table Footer / Pagination -->
+  <div class="table-footer">
+    <div class="pagination-info">
+      Showing <span id="showingStart">1</span> to <span id="showingEnd">10</span> of <span id="totalEntries">0</span> entries
+    </div>
+    <div class="pagination-controls">
+      <button id="prevPageBtn" class="page-btn" disabled><i class="fa-solid fa-chevron-left"></i> Prev</button>
+      <div id="pageNumbers" class="page-numbers">
+        <!-- Dynamic page numbers -->
+      </div>
+      <button id="nextPageBtn" class="page-btn">Next <i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>

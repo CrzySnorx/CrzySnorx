@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIYAHE - Login</title>
+  
+  <link rel="stylesheet" href="css/login.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <!-- Left Branding Section -->
+    <div class="login-banner">
+      <div class="banner-content">
+        <img src="images/logo2.jpg" alt="BIYAHE Logo" class="banner-logo">
+        <h1>BIYAHE</h1>
+        <p>Livestock Yard & Hauling Management System</p>
+      </div>
+    </div>
+
+    <!-- Right Login Form Section -->
+    <div class="login-card">
+      <div class="login-header">
+        <h2>Welcome back!</h2>
+        <p>Please select your account type and log in.</p>
+      </div>
+
+      <!-- Role Selector Toggle -->
+      <div class="role-selector">
+        <button type="button" class="role-btn active" id="adminRoleBtn" onclick="switchRole('admin')">
+          <i class="fa-solid fa-user-shield"></i> Admin
+        </button>
+        <button type="button" class="role-btn" id="driverRoleBtn" onclick="switchRole('driver')">
+          <i class="fa-solid fa-truck"></i> Driver
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <input type="hidden" id="userRole" value="admin">
+
+        <!-- Username / Email / ID Field -->
+        <div class="form-group">
+          <label for="loginInput" id="inputLabel">Username or Email</label>
+          <div class="input-box">
+            <i class="fa-solid fa-envelope" id="inputIcon"></i>
+            <input type="text" id="loginInput" placeholder="Enter your username or email" required>
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="passwordInput">Password</label>
+          <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="passwordInput" placeholder="Enter your password" required>
+            <i class="fa-solid fa-eye toggle-password" id="togglePasswordBtn" onclick="togglePasswordVisibility()"></i>
+          </div>
+        </div>
+
+        <!-- Form Utilities -->
+        <div class="form-utilities">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe"> Remember me
+          </label>
+          <a href="#" class="forgot-pass" onclick="alert('Please contact System Admin to reset password.')">Forgot Password?</a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="login-btn" id="loginSubmitBtn">
+          Sign In as Admin <i class="fa-solid fa-arrow-right" id="submitIcon"></i>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <p>&copy; 2026 BIYAHE System. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
