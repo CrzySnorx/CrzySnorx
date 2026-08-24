@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1e3a8a;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  color: #93c5fd;
+}
+
+.nav a {
+  display: block;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #fff;
+  background-color: #2563eb;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  color: #93c5fd;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.bottom-section {
+  margin-top: auto;
+  font-size: 0.8rem;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 270px;
+  padding: 30px;
+  width: calc(100% - 270px);
+}
+
+header h1 {
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.role {
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.primary-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.primary-btn:hover {
+  background-color: #1e40af;
+}
+
+.export-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.export-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Settings Section */
+.settings-section {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.settings-section h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+/* Date & Time */
+.datetime {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}

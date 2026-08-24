@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.I.Y.A.H.E. | Reports & Analytics</title>
+  <link rel="stylesheet" href="reports.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="logo.png" alt="BIYAHE Logo" class="logo" />
+      <h2>BIYAHE</h2>
+    </div>
+
+    <nav class="nav">
+      <p class="section-title">MAIN</p>
+      <a href="index.html"><i class="fas fa-home"></i> Dashboard</a>
+
+      <p class="section-title">OPERATIONS</p>
+      <a href="inventory.html"><i class="fas fa-drumstick-bite"></i> Livestock</a>
+      <a href="hauling.html"><i class="fas fa-truck"></i> Hauling Schedule</a>
+      <a href="yard.html"><i class="fas fa-warehouse"></i> Yard Operations</a>
+      <a href="fleet.html"><i class="fas fa-car"></i> Fleet Management</a>
+
+      <p class="section-title">FINANCE & PEOPLE</p>
+      <a href="earnings.html"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="clients.html"><i class="fas fa-address-book"></i> Clients</a>
+      <a href="users.html"><i class="fas fa-users-cog"></i> Users Management</a>
+
+      <p class="section-title">SYSTEM</p>
+      <a href="reports.html" class="active"><i class="fas fa-chart-bar"></i> Reports</a>
+      <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="help.html"><i class="fas fa-question-circle"></i> Help & Support</a>
+
+      <div class="bottom-section">
+        <a href="#" class="collapse"><i class="fas fa-angle-double-left"></i> Collapse Sidebar</a>
+        <a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <p class="version">BIYAHE v1.0.0</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Reports & Analytics</h1>
+      <div class="header-actions">
+        <select id="reportRange">
+          <option value="month">This Month</option>
+          <option value="quarter">This Quarter</option>
+          <option value="year">This Year</option>
+        </select>
+        <button class="secondary-btn"><i class="fas fa-file-pdf"></i> Export PDF</button>
+        <button class="secondary-btn"><i class="fas fa-file-excel"></i> Export Excel</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card users">
+        <h3>Total Users</h3>
+        <p id="totalUsers">0</p>
+        <small id="usersChange">↑ +0% this month</small>
+      </div>
+      <div class="card livestock">
+        <h3>Total Livestock</h3>
+        <p id="totalLivestock">0</p>
+        <small id="livestockChange">↑ +0% this month</small>
+      </div>
+      <div class="card hauling">
+        <h3>Total Hauling</h3>
+        <p id="totalHauling">0</p>
+        <small id="haulingChange">— 0% change</small>
+      </div>
+      <div class="card yards">
+        <h3>Total Yards</h3>
+        <p id="totalYards">0</p>
+        <small id="yardsStatus">✓ All operational</small>
+      </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="analytics-section">
+      <div class="chart-container">
+        <h2>Monthly Earnings (₱)</h2>
+        <canvas id="earningsChart"></canvas>
+        <span class="chart-label">Financial Trend</span>
+      </div>
+
+      <div class="chart-container">
+        <h2>Livestock Health & Status</h2>
+        <canvas id="healthChart"></canvas>
+        <span class="chart-label">Health Overview</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="reports.js"></script>
+</body>
+</html>

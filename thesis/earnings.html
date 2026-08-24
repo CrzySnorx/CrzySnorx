@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.I.Y.A.H.E. | Earnings Management</title>
+  <link rel="stylesheet" href="earnings.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="logo.png" alt="BIYAHE Logo" class="logo">
+      <h2>BIYAHE</h2>
+    </div>
+
+    <nav class="nav">
+      <p class="section-title">MAIN</p>
+      <a href="index.html"><i class="fas fa-home"></i> Dashboard</a>
+
+      <p class="section-title">OPERATIONS</p>
+      <a href="inventory.html"><i class="fas fa-drumstick-bite"></i> Livestock</a>
+      <a href="hauling.html"><i class="fas fa-truck"></i> Hauling Schedule</a>
+      <a href="yard.html"><i class="fas fa-warehouse"></i> Yard Operations</a>
+      <a href="fleet.html"><i class="fas fa-car"></i> Fleet Management</a>
+
+      <p class="section-title">FINANCE & PEOPLE</p>
+      <a href="earnings.html" class="active"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="clients.html"><i class="fas fa-user-friends"></i> Clients</a>
+      <a href="users.html"><i class="fas fa-users-cog"></i> Users Management</a>
+
+      <p class="section-title">SYSTEM</p>
+      <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+      <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="help.html"><i class="fas fa-question-circle"></i> Help & Support</a>
+
+      <div class="bottom-section">
+        <a href="#" class="collapse"><i class="fas fa-angle-double-left"></i> Collapse Sidebar</a>
+        <a href="login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <p class="version">BIYAHE v1.0.0</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Earnings Management</h1>
+      <div class="header-actions">
+        <button class="secondary-btn"><i class="fas fa-file-export"></i> Export Report</button>
+        <button id="addTransactionBtn" class="primary-btn"><i class="fas fa-plus"></i> Add Transaction</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card total">
+        <h3>Total Earnings</h3>
+        <p id="totalEarnings">₱0.00</p>
+      </div>
+      <div class="card hauling">
+        <h3>Hauling Fees</h3>
+        <p id="haulingFees">₱0.00</p>
+      </div>
+      <div class="card yard">
+        <h3>Yard / Storage Fees</h3>
+        <p id="yardFees">₱0.00</p>
+      </div>
+      <div class="card pending">
+        <h3>Pending Receivables</h3>
+        <p id="pendingReceivables">₱0.00</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filter-section">
+      <input type="text" id="searchTransaction" placeholder="Search ref no, client, description...">
+      <input type="date" id="startDate">
+      <input type="date" id="endDate">
+      <select id="filterCategory">
+        <option value="all">All Categories</option>
+        <option value="Cash">Cash</option>
+        <option value="Credit">Credit</option>
+      </select>
+      <select id="filterStatus">
+        <option value="all">All Statuses</option>
+        <option value="Paid">Paid</option>
+        <option value="Pending">Pending</option>
+      </select>
+    </section>
+
+    <!-- Transactions Table -->
+    <section class="table-container">
+      <table id="earningsTable">
+        <thead>
+          <tr>
+            <th>Ref No.</th>
+            <th>Date</th>
+            <th>Client / Customer</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Method</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="earningsModal" class="modal">
+    <div class="modal-content">
+      <h2>Add Transaction</h2>
+      <form id="earningsForm">
+        <input type="hidden" id="transactionId">
+
+        <label>Client / Customer</label>
+        <input type="text" id="clientName" placeholder="Enter client or customer name">
+
+        <label>Description</label>
+        <input type="text" id="description" placeholder="Transaction description">
+
+        <label>Category</label>
+        <select id="category">
+          <option value="Cash">Cash</option>
+          <option value="Credit">Credit</option>
+        </select>
+
+        <label>Method</label>
+        <select id="method">
+          <option value="Cash">Cash</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+          <option value="Check">Check</option>
+        </select>
+
+        <label>Amount (₱)</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <label>Date</label>
+        <input type="date" id="transactionDate">
+
+        <label>Status</label>
+        <select id="status">
+          <option value="Paid">Paid</option>
+          <option value="Pending">Pending</option>
+        </select>
+
+        <div class="modal-actions">
+          <button id="saveTransaction" class="primary-btn">Save Transaction</button>
+          <button type="button" id="closeTransaction" class="secondary-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="earnings.js"></script>
+</body>
+</html>

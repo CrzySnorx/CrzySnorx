@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.I.Y.A.H.E. | Chicken Inventory</title>
+  <link rel="stylesheet" href="./inventory.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="./logo.png" alt="BIYAHE Logo" class="logo">
+      <h2>BIYAHE</h2>
+    </div>
+
+    <nav class="nav">
+      <p class="section-title">MAIN</p>
+      <a href="./index.html"><i class="fas fa-home"></i> Dashboard</a>
+
+      <p class="section-title">OPERATIONS</p>
+      <a href="./inventory.html" class="active"><i class="fas fa-drumstick-bite"></i>Inventory</a>
+      <a href="./hauling.html"><i class="fas fa-truck"></i> Hauling Schedule</a>
+      <a href="./yard.html"><i class="fas fa-warehouse"></i> Yard Operations</a>
+      <a href="./fleet.html"><i class="fas fa-car"></i> Fleet Management</a>
+
+      <p class="section-title">FINANCE & PEOPLE</p>
+      <a href="./earnings.html"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="./clients.html"><i class="fas fa-user-friends"></i> Clients</a>
+      <a href="./users.html"><i class="fas fa-users-cog"></i> Users Management</a>
+
+      <p class="section-title">SYSTEM</p>
+      <a href="./reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+      <a href="./settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="./help.html"><i class="fas fa-question-circle"></i> Help & Support</a>
+
+      <div class="bottom-section">
+        <a href="#" class="collapse"><i class="fas fa-angle-double-left"></i> Collapse Sidebar</a>
+        <a href="./login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <p class="version">BIYAHE v1.0.0</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Chicken Inventory Management</h1>
+      <div class="header-actions">
+        <button class="secondary-btn"><i class="fas fa-file-export"></i> Export</button>
+        <button id="addChickenBtn" class="primary-btn"><i class="fas fa-plus"></i> Add Chicken</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card">
+        <div class="card-info">
+          <span>Total Chickens</span>
+          <h3 id="totalChickenCount">0</h3>
+        </div>
+        <i class="fas fa-drumstick-bite card-icon info"></i>
+      </div>
+      <div class="card">
+        <div class="card-info">
+          <span>Fresh / Good</span>
+          <h3 id="freshCount">0</h3>
+        </div>
+        <i class="fas fa-check-circle card-icon healthy"></i>
+      </div>
+      <div class="card">
+        <div class="card-info">
+          <span>In Storage</span>
+          <h3 id="storageCount">0</h3>
+        </div>
+        <i class="fas fa-box-archive card-icon warning"></i>
+      </div>
+      <div class="card">
+        <div class="card-info">
+          <span>Ready for Delivery</span>
+          <h3 id="deliveryCount">0</h3>
+        </div>
+        <i class="fas fa-truck card-icon info"></i>
+      </div>
+    </section>
+
+    <!-- Chicken Table -->
+    <section class="table-container">
+      <table id="chickenTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Batch No.</th>
+            <th>Type</th>
+            <th>Weight (kg)</th>
+            <th>Status</th>
+            <th>Processing Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>CH-001</td>
+            <td>Broiler</td>
+            <td>2.5</td>
+            <td><span class="status-tag healthy">Fresh / Good</span></td>
+            <td>2026-08-22</td>
+            <td><button class="delete-btn">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="./inventory.js"></script>
+</body>
+</html>

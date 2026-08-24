@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.I.Y.A.H.E. | Yard Operations</title>
+  <link rel="stylesheet" href="./yard.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="./logo.png" alt="BIYAHE Logo" class="logo" />
+      <h2>BIYAHE</h2>
+    </div>
+
+    <nav class="nav">
+      <p class="section-title">MAIN</p>
+      <a href="./dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+
+      <p class="section-title">OPERATIONS</p>
+      <a href="./inventory.html"><i class="fas fa-drumstick-bite"></i> Chicken Inventory</a>
+      <a href="./hauling.html"><i class="fas fa-truck"></i> Hauling Schedule</a>
+      <a href="./yard.html" class="active"><i class="fas fa-warehouse"></i> Yard Operations</a>
+      <a href="./fleet.html"><i class="fas fa-car"></i> Fleet Management</a>
+
+      <p class="section-title">FINANCE & PEOPLE</p>
+      <a href="./earnings.html"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="./clients.html"><i class="fas fa-user-friends"></i> Clients</a>
+      <a href="./users.html"><i class="fas fa-users-cog"></i> Users Management</a>
+
+      <p class="section-title">SYSTEM</p>
+      <a href="./reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+      <a href="./settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="./help.html"><i class="fas fa-question-circle"></i> Help & Support</a>
+
+      <div class="bottom-section">
+        <a href="#" class="collapse"><i class="fas fa-angle-double-left"></i> Collapse Sidebar</a>
+        <a href="./login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <p class="version">BIYAHE v1.0.0</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Yard Operations</h1>
+      <div class="header-actions">
+        <button class="secondary-btn"><i class="fas fa-file-export"></i> Export</button>
+        <button id="addYardBtn" class="primary-btn"><i class="fas fa-plus"></i> Add Yard</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card"><span>Total Yards</span><h3 id="totalYards">0</h3></div>
+      <div class="card"><span>Total Capacity</span><h3 id="totalCapacity">0</h3></div>
+      <div class="card"><span>Total Occupied</span><h3 id="totalOccupied">0</h3></div>
+      <div class="card"><span>Near Full / Critical</span><h3 id="criticalYards">0</h3></div>
+    </section>
+
+    <!-- Search & Filters -->
+    <section class="filter-section">
+      <input type="text" id="searchYard" placeholder="Search yard name, supervisor, category..." />
+      <select id="filterStatus">
+        <option value="all">All Statuses</option>
+        <option value="Available">Available</option>
+        <option value="Full">Full</option>
+        <option value="Critical">Critical</option>
+      </select>
+      <button id="transferBtn" class="secondary-btn"><i class="fas fa-exchange-alt"></i> Transfer Livestock</button>
+    </section>
+
+    <!-- Table -->
+    <section class="table-container">
+      <table id="yardTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Yard Name</th>
+            <th>Sub-Pens</th>
+            <th>Livestock Category</th>
+            <th>Supervisor</th>
+            <th>Capacity</th>
+            <th>Occupied</th>
+            <th>Occupancy Rate</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="yardModal" class="modal">
+    <div class="modal-content">
+      <h2>Add Yard</h2>
+      <form id="yardForm">
+        <input type="hidden" id="yardId">
+
+        <label>Yard Name</label>
+        <input type="text" id="yardName" placeholder="Enter yard name">
+
+        <label>Sub-Pens</label>
+        <input type="number" id="subPens" placeholder="Number of sub-pens">
+
+        <label>Livestock Category</label>
+        <input type="text" id="livestockCategory" placeholder="Livestock category">
+
+        <label>Supervisor</label>
+        <input type="text" id="supervisor" placeholder="Supervisor name">
+
+        <label>Capacity</label>
+        <input type="number" id="capacity" placeholder="Total capacity">
+
+        <label>Occupied</label>
+        <input type="number" id="occupied" placeholder="Currently occupied">
+
+        <label>Status</label>
+        <select id="status">
+          <option value="Available">Available</option>
+          <option value="Full">Full</option>
+          <option value="Critical">Critical</option>
+        </select>
+
+        <div class="modal-actions">
+          <button id="saveYard" class="primary-btn">Save Yard</button>
+          <button type="button" id="closeYard" class="secondary-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./yard.js"></script>
+</body>
+</html>

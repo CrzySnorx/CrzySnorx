@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.I.Y.A.H.E. | Hauling Management</title>
+  <link rel="stylesheet" href="./hauling.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="./logo.png" alt="BIYAHE Logo" class="logo" />
+      <h2>BIYAHE</h2>
+    </div>
+
+    <nav class="nav">
+      <p class="section-title">MAIN</p>
+      <a href="./index.html"><i class="fas fa-home"></i> Dashboard</a>
+
+      <p class="section-title">OPERATIONS</p>
+      <a href="./inventory.html"><i class="fas fa-drumstick-bite"></i> Chicken Inventory</a>
+      <a href="./hauling.html" class="active"><i class="fas fa-truck"></i> Hauling</a>
+      <a href="./yard.html"><i class="fas fa-warehouse"></i> Yard Operations</a>
+      <a href="./fleet.html"><i class="fas fa-car"></i> Fleet Management</a>
+
+      <p class="section-title">FINANCE & PEOPLE</p>
+      <a href="./earnings.html"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="./clients.html"><i class="fas fa-user-friends"></i> Clients</a>
+      <a href="./users.html"><i class="fas fa-users-cog"></i> Users Management</a>
+
+      <p class="section-title">SYSTEM</p>
+      <a href="./reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+      <a href="./settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="./help.html"><i class="fas fa-question-circle"></i> Help & Support</a>
+
+      <div class="bottom-section">
+        <a href="#" class="collapse"><i class="fas fa-angle-double-left"></i> Collapse Sidebar</a>
+        <a href="./login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <p class="version">BIYAHE v1.0.0</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Hauling Management</h1>
+      <div class="header-actions">
+        <button class="secondary-btn"><i class="fas fa-file-export"></i> Export</button>
+        <button id="addHaulingBtn" class="primary-btn"><i class="fas fa-plus"></i> Add Schedule</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card"><span>Total Trips</span><h3 id="totalTrips">0</h3></div>
+      <div class="card"><span>Scheduled</span><h3 id="scheduledTrips">0</h3></div>
+      <div class="card"><span>In-Transit</span><h3 id="inTransitTrips">0</h3></div>
+      <div class="card"><span>Completed</span><h3 id="completedTrips">0</h3></div>
+      <div class="card"><span>Cancelled</span><h3 id="cancelledTrips">0</h3></div>
+    </section>
+
+    <!-- Table -->
+    <section class="table-container">
+      <table id="haulingTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Truck</th>
+            <th>Driver</th>
+            <th>Cargo</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Date & Time</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="haulingModal" class="modal">
+    <div class="modal-content">
+      <h2>Add Hauling Schedule</h2>
+      <form id="haulingForm">
+        <input type="hidden" id="haulId">
+
+        <div class="form-grid">
+          <div class="form-section">
+            <h3>Hauling Information</h3>
+            <label>Truck Info</label>
+            <input type="text" id="truck" placeholder="Truck name or plate number">
+
+            <label>Driver Name</label>
+            <input type="text" id="driver" placeholder="Driver full name">
+
+            <label>Destination / Client</label>
+            <input type="text" id="destination" placeholder="Destination or client name">
+
+            <label>Date</label>
+            <input type="date" id="haulDate">
+
+            <label>Time</label>
+            <input type="time" id="haulTime">
+
+            <label>Status</label>
+            <select id="haulStatus">
+              <option value="Scheduled">Scheduled</option>
+              <option value="In-Transit">In-Transit</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <h3>Fleet Information</h3>
+            <label>Truck Plate No.</label>
+            <input type="text" id="plateNo" placeholder="Plate number">
+
+            <label>Truck Type</label>
+            <input type="text" id="truckType" placeholder="Type of truck">
+
+            <h3>Earnings Information</h3>
+            <label>Description</label>
+            <input type="text" id="earningDescription" placeholder="Earning description">
+
+            <label>Amount (₱)</label>
+            <input type="number" id="earningAmount" placeholder="Enter amount">
+          </div>
+
+          <div class="form-section">
+            <h3>Client Information</h3>
+            <label>Client Name</label>
+            <input type="text" id="clientName" placeholder="Client or company name">
+
+            <label>Contact Number</label>
+            <input type="text" id="clientContact" placeholder="Contact number">
+
+            <label>Address</label>
+            <input type="text" id="clientAddress" placeholder="Client address">
+
+            <h3>Yard Information</h3>
+            <label>Origin Yard</label>
+            <input type="text" id="yardName" placeholder="Yard name or code">
+
+            <label>Yard Capacity</label>
+            <input type="number" id="yardCapacity" placeholder="Total capacity">
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="saveHauling" class="primary-btn">Save Schedule</button>
+          <button type="button" id="closeHauling" class="secondary-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./hauling.js"></script>
+</body>
+</html>

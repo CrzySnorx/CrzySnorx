@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.I.Y.A.H.E. | Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <img src="logo.png" alt="BIYAHE Logo" class="logo">
+      <h1>BIYAHE</h1>
+      <p>Livestock Yard & Hauling Management System</p>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <h2>Welcome back!</h2>
+      <p>Please select your account type and log in.</p>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button id="adminTab" class="tab active">
+          <i class="fas fa-user"></i> Admin
+        </button>
+        <button id="driverTab" class="tab">
+          <i class="fas fa-truck"></i> Driver
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form id="loginForm">
+        <div id="adminFields">
+          <label>Username or Email</label>
+          <input type="text" id="username" placeholder="Enter your username or email" required>
+        </div>
+
+        <div id="driverFields" style="display:none;">
+          <label>Driver ID or License No.</label>
+          <input type="text" id="driverId" placeholder="Enter License or Driver ID" required>
+        </div>
+
+        <label>Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Enter your password" required>
+          <span id="togglePassword" class="toggle-icon">👁</span>
+        </div>
+
+        <div class="options">
+          <label><input type="checkbox" id="remember"> Remember me</label>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+
+        <button type="submit" id="loginBtn" class="login-btn">Sign In as Admin →</button>
+      </form>
+
+      <footer>© 2026 BIYAHE System. All rights reserved.</footer>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
