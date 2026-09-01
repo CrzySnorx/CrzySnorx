@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driver Dashboard | HaulTrack System</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="system-header">
+        <img src="logo/bathan.jpg" alt="HaulTrack Logo" class="system-logo">
+        <h2 class="system-name">HaulTrack System</h2>
+        <p class="system-name">B.I.Y.A.H.E</p>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="active-route.html">Active Route / GPS</a>
+        <a href="vehicle-maintenance.html">Vehicle Maintenance</a>
+        <a href="support.html">Help & Support</a>
+        <a href="trip-history.html">Trip History</a>
+      </nav>
+
+      <div class="driver-info">
+        <p><strong>Juan Dela Cruz</strong></p>
+        <p>Lic: D02-19-88392</p>
+        <button class="signout-btn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="header">
+        <div class="driver-header">
+          <img src="images/driver-avatar.png" alt="Driver Avatar" class="driver-avatar">
+          <div class="header-text">
+            <h1>Juan Dela Cruz👋</h1>
+            <p>Narito ang status ng iyong mga biyahe ngayong araw.</p>
+          </div>
+        </div>
+        <div class="header-status">
+          <span class="badge on-duty">ON DUTY</span>
+          <span class="date">August 26, 2026</span>
+          <span class="time">09:00:24 PM</span>
+        </div>
+      </section>
+
+      <section class="trip-info">
+        <div class="trip-header">
+          <span class="trip-id">TRIP #BYH-2026-0842</span>
+          <span class="trip-status">In Transit</span>
+        </div>
+        <div class="trip-details">
+          <div class="detail">
+            <h3>Origin / Pickup</h3>
+            <p><strong>Lipang Integrated Farm</strong></p>
+            <p>Zone 4, Lipa City, Batangas</p>
+          </div>
+          <div class="detail">
+            <h3>Destination Yard</h3>
+            <p><strong>Batangas Central Yard</strong></p>
+            <p>Bay 3 - Unloading Dock</p>
+          </div>
+          <div class="detail">
+            <h3>Cargo Payload</h3>
+            <p><strong>45 Swine (Live Hogs)</strong></p>
+            <p>Total Weight: ~4,950 kg</p>
+          </div>
+        </div>
+        <div class="trip-actions">
+          <button class="btn start">Start Navigation</button>
+          <button class="btn view">View Waybill / Permit</button>
+          <button class="btn report">Report Issue</button>
+        </div>
+      </section>
+
+      <section class="live-route">
+        <h2>Live Route Navigation</h2>
+        <p class="gps-status">GPS Signal: <span class="signal strong">Strong</span></p>
+        <div class="route-map">
+          <p>En Route to Destination</p>
+          <p>Southern Tagalog Arterial Rd</p>
+          <p>Speed: 65 km/h</p>
+        </div>
+        <div class="next-turn">
+          <p><strong>Next Turn:</strong> In 400m turn right onto STAR Tollway Exit</p>
+        </div>
+      </section>
+
+      <section class="summary">
+        <h2>Today's Summary</h2>
+        <div class="summary-cards">
+          <div class="card completed">
+            <h3>Completed</h3>
+            <p>—</p>
+          </div>
+          <div class="card in-transit">
+            <h3>In Transit</h3>
+            <p>—</p>
+          </div>
+          <div class="card capacity">
+            <h3>Capacity</h3>
+            <p>—</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

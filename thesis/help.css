@@ -1,0 +1,213 @@
+/* ====== GENERAL RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== BODY LAYOUT ====== */
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+  overflow: hidden;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  width: 230px;
+  background-color: #5A0000; /* dark red */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.logo-section {
+  text-align: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.system-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d7baba;
+}
+
+/* ====== NAVIGATION ====== */
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  color: #d7baba;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s, padding-left 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  background-color: #8B0000;
+  padding-left: 15px;
+}
+
+.nav a.active {
+  background-color: #A00000;
+  font-weight: 700;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main-content {
+  flex: 1;
+  padding: 25px 30px;
+  overflow-y: auto;
+  background-color: #f5f7fa;
+}
+
+/* ====== PAGE HEADER ====== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: #8B0000;
+  font-weight: 700;
+}
+
+/* ====== CARD BASE ====== */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ====== HELP SECTION ====== */
+.help-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8B0000;
+  margin-bottom: 15px;
+}
+
+/* ====== FAQ ACCORDION ====== */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background-color: #e0e0e0;
+  border: none;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #bdbdbd;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #A00000;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ====== SUPPORT FORM ====== */
+#supportForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#supportForm label {
+  font-weight: 600;
+  color: #8B0000;
+}
+
+#supportForm input,
+#supportForm textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+#supportForm input:focus,
+#supportForm textarea:focus {
+  outline: none;
+  border-color: #A00000;
+  box-shadow: 0 0 4px rgba(160,0,0,0.5);
+}
+
+.primary-btn {
+  background-color: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: #5A0000;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .help-section h2 {
+    font-size: 1.1rem;
+  }
+}

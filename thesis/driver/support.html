@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Dashboard | Help & Support</title>
+
+  <link rel="stylesheet" href="support.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="system-header">
+        <img src="logo/bathan.jpg" alt="HaulTrack Logo" class="system-logo" />
+        <h2 class="system-name">HaulTrack System</h2>
+        <p class="system-name">B.I.Y.A.H.E</p>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="active-route.html">Active Route / GPS</a>
+        <a href="vehicle-maintenance.html">Vehicle Maintenance</a>
+        <a href="support.html" class="active">Help & Support</a>
+        <a href="trip-history.html">Trip History</a>
+      </nav>
+
+      <div class="driver-info">
+        <p><strong>Juan Dela Cruz</strong></p>
+        <p>Lic: D02-19-88392</p>
+        <button class="signout-btn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="header">
+        <h1>Help & Support</h1>
+        <p>Find answers, contact support, and report issues.</p>
+      </section>
+
+      <!-- Support Overview -->
+      <section class="support-overview">
+        <div class="card">
+          <h3>System Assistance</h3>
+          <p>Need help navigating the BIYAHE system? Access quick guides and FAQs.</p>
+        </div>
+        <div class="card">
+          <h3>Technical Support</h3>
+          <p>Report bugs or system errors directly to the admin team.</p>
+        </div>
+        <div class="card">
+          <h3>Contact Admin</h3>
+          <p>Reach out for urgent concerns or account-related issues.</p>
+        </div>
+      </section>
+
+      <!-- Support Actions -->
+      <section class="support-actions">
+        <button class="btn faq">View FAQs</button>
+        <button class="btn report">Report Issue</button>
+        <button class="btn contact">Contact Admin</button>
+      </section>
+
+      <!-- Support Log -->
+      <section class="support-log">
+        <h2>Recent Support Tickets</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Issue</th>
+              <th>Status</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody id="supportTable">
+            <tr>
+              <td>Aug 25, 2026</td>
+              <td>Map not loading</td>
+              <td>Resolved</td>
+              <td>System patch applied</td>
+            </tr>
+            <tr>
+              <td>Aug 20, 2026</td>
+              <td>Login error</td>
+              <td>Pending</td>
+              <td>Under review</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="support.js"></script>
+</body>
+</html>

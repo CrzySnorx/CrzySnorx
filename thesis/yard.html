@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.I.Y.A.H.E. | Yard Operations</title>
+  <link rel="stylesheet" href="./yard.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo-section">
+      <img src="./logo/bathan.jpg" alt="BIYAHE Logo" class="logo">
+      <h2>B.I.Y.A.H.E.</h2>
+      <p class="system-label">System</p>
+    </div>
+
+    <nav class="nav">
+      <p class="section-title">MAIN</p>
+      <a href="./index.html"><i class="fas fa-home"></i> Dashboard</a>
+
+      <p class="section-title">OPERATIONS</p>
+      <a href="./inventory.html"><i class="fas fa-drumstick-bite"></i> Inventory</a>
+      <a href="./hauling.html"><i class="fas fa-truck"></i> Hauling Schedule</a>
+      <a href="./yard.html" class="active"><i class="fas fa-warehouse"></i> Yard Operations</a>
+      <a href="./fleet.html"><i class="fas fa-car"></i> Fleet Management</a>
+
+      <p class="section-title">FINANCE & PEOPLE</p>
+      <a href="./earnings.html"><i class="fas fa-wallet"></i> Earnings</a>
+      <a href="./clients.html"><i class="fas fa-user-friends"></i> Clients</a>
+      <a href="./users.html"><i class="fas fa-users-cog"></i> Users Management</a>
+
+      <p class="section-title">SYSTEM</p>
+      <a href="./reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+      <a href="./settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="./help.html"><i class="fas fa-question-circle"></i> Help & Support</a>
+
+      <div class="bottom-section">
+        <a href="#" class="collapse"><i class="fas fa-angle-double-left"></i> Collapse Sidebar</a>
+        <a href="./login.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <p class="version">BIYAHE v1.0.0</p>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="page-header">
+      <h1>Yard Operations</h1>
+      <div class="header-actions">
+        <button class="secondary-btn"><i class="fas fa-file-export"></i> Export</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card"><span>Total Yards</span><h3 id="totalYards">0</h3></div>
+      <div class="card"><span>Total Capacity</span><h3 id="totalCapacity">0</h3></div>
+      <div class="card"><span>Total Occupied</span><h3 id="totalOccupied">0</h3></div>
+      <div class="card"><span>Dispatch Ready</span><h3 id="dispatchReady">0</h3></div>
+    </section>
+
+    <!-- Yard A -->
+    <section class="yard-summary">
+      <h2>Yard A</h2>
+      <div class="card-group">
+        <div class="card">
+          <span>Capacity</span>
+          <canvas id="yardAChart"></canvas>
+        </div>
+        <div class="card"><span>Current Stock</span><h3 id="yardAStock">0</h3></div>
+        <div class="card"><span>Status</span><h3 id="yardAStatus">Available</h3></div>
+      </div>
+    </section>
+
+    <!-- Yard B -->
+    <section class="yard-summary">
+      <h2>Yard B</h2>
+      <div class="card-group">
+        <div class="card">
+          <span>Capacity</span>
+          <canvas id="yardBChart"></canvas>
+        </div>
+        <div class="card"><span>Current Stock</span><h3 id="yardBStock">0</h3></div>
+        <div class="card"><span>Status</span><h3 id="yardBStatus">Available</h3></div>
+      </div>
+    </section>
+
+    <!-- Yard C -->
+    <section class="yard-summary">
+      <h2>Yard C</h2>
+      <div class="card-group">
+        <div class="card">
+          <span>Capacity</span>
+          <canvas id="yardCChart"></canvas>
+        </div>
+        <div class="card"><span>Current Stock</span><h3 id="yardCStock">0</h3></div>
+        <div class="card"><span>Status</span><h3 id="yardCStatus">Available</h3></div>
+      </div>
+    </section>
+
+    <!-- Yard Table -->
+    <section class="table-container">
+      <table id="yardTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Yard Name</th>
+            <th>Capacity</th>
+            <th>Occupied</th>
+            <th>Rate</th>
+            <th>Supervisor</th>
+            <th>Status</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Yard JS -->
+  <script src="./yard.js"></script>
+</body>
+</html>

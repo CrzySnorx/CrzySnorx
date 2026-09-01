@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Dashboard | Active Route</title>
+
+  <!-- Leaflet Map Library -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Leaflet Routing Machine -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+  <link rel="stylesheet" href="active-route.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="system-header">
+        <img src="logo/bathan.jpg" alt="HaulTrack Logo" class="system-logo" />
+        <h2 class="system-name">HaulTrack System</h2>
+        <p class="system-name">B.I.Y.A.H.E</p>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="active-route.html" class="active">Active Route / GPS</a>
+        <a href="vehicle-maintenance.html">Vehicle Maintenance</a>
+        <a href="support.html">Help & Support</a>
+        <a href="trip-history.html">Trip History</a>
+      </nav>
+
+      <div class="driver-info">
+        <p><strong>Juan Dela Cruz</strong></p>
+        <p>Lic: D02-19-88392</p>
+        <button class="signout-btn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="header">
+        <h1>Active Route / GPS</h1>
+        <p>Real-time navigation and trip monitoring</p>
+        <div class="gps-status">
+          GPS Signal: <span class="signal strong">Strong</span>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="map-section">
+        <div id="map"></div>
+        <div class="next-turn">
+          <p><strong>Next Turn:</strong> In 400m turn right onto STAR Tollway Exit</p>
+        </div>
+      </section>
+
+      <!-- Trip Details -->
+      <section class="trip-details">
+        <div class="detail">
+          <h3>Current Speed</h3>
+          <p><span id="speed">65</span> km/h</p>
+        </div>
+        <div class="detail">
+          <h3>Estimated Arrival</h3>
+          <p><span id="eta">45 mins</span></p>
+        </div>
+        <div class="detail">
+          <h3>Distance Remaining</h3>
+          <p><span id="distance">32 km</span></p>
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <section class="route-actions">
+        <button class="btn pause">Pause Navigation</button>
+        <button class="btn resume">Resume Navigation</button>
+        <button class="btn report">Report Issue</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="active-route.js"></script>
+</body>
+</html>

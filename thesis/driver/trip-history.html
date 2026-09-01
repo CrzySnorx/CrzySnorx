@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Dashboard | Trip History</title>
+
+  <link rel="stylesheet" href="trip-history.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="system-header">
+        <img src="logo/bathan.jpg" alt="HaulTrack Logo" class="system-logo" />
+        <h2 class="system-name">HaulTrack System</h2>
+        <p class="system-name">B.I.Y.A.H.E</p>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="active-route.html">Active Route / GPS</a>
+        <a href="vehicle-maintenance.html">Vehicle Maintenance</a>
+        <a href="support.html">Help & Support</a>
+        <a href="trip-history.html" class="active">Trip History</a>
+      </nav>
+
+      <div class="driver-info">
+        <p><strong>Juan Dela Cruz</strong></p>
+        <p>Lic: D02-19-88392</p>
+        <button class="signout-btn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="header">
+        <h1>Trip History</h1>
+        <p>View past trips, completed deliveries, and cancelled schedules.</p>
+      </section>
+
+      <!-- Trip Overview -->
+      <section class="trip-overview">
+        <div class="card">
+          <h3>Total Trips</h3>
+          <p id="totalTrips">120</p>
+        </div>
+        <div class="card">
+          <h3>Completed</h3>
+          <p id="completedTrips">95</p>
+        </div>
+        <div class="card">
+          <h3>Cancelled</h3>
+          <p id="cancelledTrips">10</p>
+        </div>
+      </section>
+
+      <!-- Trip History Table -->
+      <section class="trip-log">
+        <h2>Trip Records</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Origin</th>
+              <th>Destination</th>
+              <th>Status</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody id="tripTable">
+            <tr>
+              <td>Aug 25, 2026</td>
+              <td>Rosario Yard</td>
+              <td>Batangas City</td>
+              <td>Completed</td>
+              <td>Delivered livestock batch</td>
+            </tr>
+            <tr>
+              <td>Aug 20, 2026</td>
+              <td>Rosario Yard</td>
+              <td>Lipa City</td>
+              <td>Cancelled</td>
+              <td>Truck maintenance issue</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="trip-history.js"></script>
+</body>
+</html>

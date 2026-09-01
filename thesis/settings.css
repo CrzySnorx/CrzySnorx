@@ -1,0 +1,259 @@
+/* ====== GENERAL RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== BODY LAYOUT ====== */
+body {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+  overflow: hidden;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  width: 230px;
+  background-color: #5A0000; /* dark red */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.logo-section {
+  text-align: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.system-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d7baba;
+}
+
+/* ====== NAVIGATION ====== */
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  color: #d7baba;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s, padding-left 0.3s;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  background-color: #8B0000;
+  padding-left: 15px;
+}
+
+.nav a.active {
+  background-color: #A00000;
+  font-weight: 700;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main-content {
+  flex: 1;
+  padding: 25px 30px;
+  overflow-y: auto;
+  background-color: #f5f7fa;
+}
+
+/* ====== PAGE HEADER ====== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: #8B0000;
+  font-weight: 700;
+}
+
+/* ====== CARD BASE ====== */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ====== PROFILE SECTION ====== */
+.profile-section {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 25px;
+  padding: 25px 30px;
+}
+
+.profile-avatar {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #8B0000;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8B0000;
+}
+
+.role {
+  font-size: 1rem;
+  color: #A00000;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  list-style: none;
+  text-align: left;
+  margin: 0 auto 15px;
+  max-width: 380px;
+  color: #333;
+}
+
+.profile-details li {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.primary-btn {
+  background-color: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: #5A0000;
+}
+
+/* ====== SETTINGS SECTION ====== */
+.settings-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #8B0000;
+  margin-bottom: 15px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.export-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.export-btn:hover {
+  background-color: #bdbdbd;
+}
+
+/* ====== DATE & TIME ====== */
+.datetime {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #8B0000;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .profile-section {
+    max-width: 420px;
+  }
+
+  .profile-details {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .profile-avatar {
+    height: 80px;
+    width: 80px;
+  }
+
+  .profile-name {
+    font-size: 1.2rem;
+  }
+
+  .settings-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .profile-section {
+    max-width: 100%;
+    padding: 20px;
+  }
+}

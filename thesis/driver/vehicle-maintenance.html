@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Driver Dashboard | Vehicle Maintenance</title>
+
+  <link rel="stylesheet" href="vehicle-maintenance.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="system-header">
+        <img src="logo/bathan.jpg" alt="HaulTrack Logo" class="system-logo" />
+        <h2 class="system-name">HaulTrack System</h2>
+        <p class="system-name">B.I.Y.A.H.E</p>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="active-route.html">Active Route / GPS</a>
+        <a href="vehicle-maintenance.html" class="active">Vehicle Maintenance</a>
+        <a href="support.html">Help & Support</a>
+        <a href="trip-history.html">Trip History</a>
+      </nav>
+
+      <div class="driver-info">
+        <p><strong>Juan Dela Cruz</strong></p>
+        <p>Lic: D02-19-88392</p>
+        <button class="signout-btn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="header">
+        <h1>Vehicle Maintenance</h1>
+        <p>Track and manage vehicle health, service schedules, and issues.</p>
+      </section>
+
+      <!-- Maintenance Overview -->
+      <section class="maintenance-overview">
+        <div class="card">
+          <h3>Last Service Date</h3>
+          <p id="lastService">August 10, 2026</p>
+        </div>
+        <div class="card">
+          <h3>Next Scheduled Service</h3>
+          <p id="nextService">September 25, 2026</p>
+        </div>
+        <div class="card">
+          <h3>Odometer Reading</h3>
+          <p id="odometer">45,230 km</p>
+        </div>
+      </section>
+
+      <!-- Maintenance Actions -->
+      <section class="maintenance-actions">
+        <button class="btn schedule">Schedule Maintenance</button>
+        <button class="btn report">Report Vehicle Issue</button>
+      </section>
+
+      <!-- Maintenance Log -->
+      <section class="maintenance-log">
+        <h2>Maintenance History</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Service Type</th>
+              <th>Status</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody id="maintenanceTable">
+            <tr>
+              <td>Aug 10, 2026</td>
+              <td>Oil Change</td>
+              <td>Completed</td>
+              <td>Engine running smoothly</td>
+            </tr>
+            <tr>
+              <td>Jul 02, 2026</td>
+              <td>Tire Rotation</td>
+              <td>Completed</td>
+              <td>All tires balanced</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="vehicle-maintenance.js"></script>
+</body>
+</html>
