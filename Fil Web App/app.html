@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0038a8">
+  <title>Aral Tayo – Learn Filipino</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="app-head">
+    <header class="topbar">
+      <div class="brand"><span class="sun-s">☀</span> Aral Tayo</div>
+      <div class="top-stats">
+        <span class="chip" id="chip-streak">🔥 0</span>
+        <span class="chip" id="chip-xp">⭐ 0 XP</span>
+        <span class="chip chip-user" id="chip-user">User</span>
+        <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Toggle dark mode">🌙</button>
+        <button class="btn ghost small" id="logout-btn" type="button">Log out</button>
+      </div>
+    </header>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <button data-tab="home" class="active"><span class="ni">🏠</span><span class="nl">Lessons</span></button>
+      <button data-tab="flash"><span class="ni">🃏</span><span class="nl">Cards</span></button>
+      <button data-tab="quiz"><span class="ni">🧠</span><span class="nl">Quiz</span></button>
+      <button data-tab="book"><span class="ni">📖</span><span class="nl">Phrasebook</span></button>
+      <button data-tab="progress"><span class="ni">📈</span><span class="nl">Progress</span></button>
+    </nav>
+  </div>
+
+  <main class="container">
+    <!-- LESSONS -->
+    <section class="panel active" id="panel-home">
+      <div id="home-view">
+        <div class="card welcome">
+          <div>
+            <h2 id="welcome-title">Mabuhay!</h2>
+            <p class="muted" style="margin:0">Pick a topic and start learning. Tap 🔊 to hear the word.</p>
+          </div>
+          <div class="chip chip-soft" id="overall-chip">0% complete</div>
+        </div>
+        <div class="daily" id="daily"></div>
+        <div class="grid" id="cat-grid"></div>
+      </div>
+      <div id="lesson-view" class="hidden"></div>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section class="panel" id="panel-flash">
+      <div class="controls">
+        <label>Topic
+          <select id="flash-cat"></select>
+        </label>
+        <button class="btn primary" id="flash-start" type="button">Shuffle & start</button>
+      </div>
+      <div class="flash-wrap">
+        <div class="counter" id="flash-counter"></div>
+        <div class="flip" id="flip">
+          <div class="flip-inner">
+            <div class="face front">
+              <div class="word-big" id="flash-front">—</div>
+              <div class="hint">Tap card to reveal</div>
+            </div>
+            <div class="face back">
+              <div class="word-big" id="flash-back" style="color:var(--accent)">—</div>
+              <div class="muted" id="flash-pr"></div>
+              <div class="small" id="flash-ex" style="margin-top:.6rem"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flash-actions">
+          <button class="btn ghost" id="flash-speak" type="button">🔊 Listen</button>
+          <button class="btn danger" id="flash-again" type="button">Again</button>
+          <button class="btn good" id="flash-know" type="button">Got it ✓</button>
+        </div>
+        <p class="small muted">Tip: “Got it” also marks the word as learned.</p>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="panel" id="panel-quiz">
+      <div id="quiz-setup" class="card quiz-card">
+        <h2>Test yourself</h2>
+        <p class="muted">10 questions. Earn 5 XP for each correct answer.</p>
+        <div class="controls">
+          <label>Topic <select id="quiz-cat"></select></label>
+          <label>Mode
+            <select id="quiz-mode">
+              <option value="mix">Mixed</option>
+              <option value="f2e">Filipino → English</option>
+              <option value="e2f">English → Filipino</option>
+            </select>
+          </label>
+        </div>
+        <button class="btn primary block" id="quiz-start" type="button">Start quiz</button>
+      </div>
+      <div id="quiz-play" class="card quiz-card hidden"></div>
+    </section>
+
+    <!-- PHRASEBOOK -->
+    <section class="panel" id="panel-book">
+      <div class="controls">
+        <label>Search Filipino or English
+          <input type="search" id="book-search" placeholder="e.g. thank you, salamat, water…">
+        </label>
+      </div>
+      <div class="word-list" id="book-list"></div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="panel" id="panel-progress">
+      <div class="stats" id="stats"></div>
+      <div class="card" style="margin-bottom:1rem">
+        <h3 id="level-title">Level 1</h3>
+        <div class="bar level-bar"><i id="level-bar"></i></div>
+        <div class="small muted" id="level-text"></div>
+      </div>
+      <div class="card">
+        <h3>Topic mastery</h3>
+        <div id="mastery"></div>
+      </div>
+      <p class="center" style="margin-top:1.2rem">
+        <button class="btn ghost small" id="reset-btn" type="button">Reset my progress</button>
+      </p>
+    </section>
+  </main>
+
+  <div id="toast" role="status"></div>
+
+  <script src="store.js"></script>
+  <script src="auth.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
