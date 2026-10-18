@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salita</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=Noto+Sans+Tagalog&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="side">
+  <header class="top">
+    <p class="brand"><span class="brand-name">Salita</span><span class="brand-script" aria-hidden="true">ᜐᜎᜒᜆ</span></p>
+    <div class="stats" aria-label="Iyong progreso">
+      <span class="chip">Streak <b id="stat-streak">0</b> araw</span>
+      <span class="chip"><b id="stat-xp">0</b> XP</span>
+    </div>
+  </header>
+  <div class="weave" aria-hidden="true"></div>
+  <nav class="tabs" aria-label="Mga seksyon">
+    <button data-act="tab" data-tab="home">Aralin</button>
+    <button data-act="tab" data-tab="cards">Kard</button>
+    <button data-act="tab" data-tab="play">Laro</button>
+    <button data-act="tab" data-tab="list">Listahan</button>
+    <button data-act="tab" data-tab="guide">Gabay</button>
+  </nav>
+  </aside>
+  <main id="view" tabindex="-1"></main>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
